@@ -46,7 +46,7 @@ services:
       - notes_network
     volumes:
       - ./src:/app/src  # Pour le développement avec hot reload
-    command: npm start  # Ajuster selon votre technologie
+    # command: npm start  # Ajuster selon votre technologie
 
 networks:
   notes_network:
