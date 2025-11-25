@@ -42,7 +42,8 @@ public class AuthService {
                         "Identifiants invalides"
                 ));
         
-        // Vérification simple en clair (pour test uniquement)
+        // TEMPORAIRE: Vérification en texte clair pour développement
+        // TODO: Remettre BCrypt en production
         if (!request.getPassword().equals(etudiant.getMotDePasse())) {
             throw new ApiException(
                     ErrorCodes.AUTH_001,
@@ -95,7 +96,8 @@ public class AuthService {
             );
         }
         
-        // Vérification simple en clair (pour test uniquement)
+        // TEMPORAIRE: Vérification en texte clair pour développement
+        // TODO: Remettre BCrypt en production
         if (!request.getMotDePasse().equals(user.getMotDePasse())) {
             throw new ApiException(
                     ErrorCodes.AUTH_001,

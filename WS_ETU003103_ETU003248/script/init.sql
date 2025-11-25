@@ -313,15 +313,18 @@ INSERT INTO matiere_parcours (id_matiere, id_parcours, id_type_matiere, date_deb
 -- INSERTION DES ÉTUDIANTS
 -- ============================================
 
--- Insertion des utilisateurs admin
+-- Insertion des utilisateurs admin (TEMPORAIRE: tous les mots de passe sont "password")
+-- TODO: Générer des hash BCrypt spécifiques pour chaque utilisateur
+-- Utiliser le script: WS_ETU003103_ETU003248/script/update_passwords.sql
 INSERT INTO user (id_user, nom, prenom, email, mot_de_passe, role, est_actif, date_creation) VALUES
-(1, 'Admin', 'Système', 'admin@univ.mg', 'adminpass', 'ADMIN', true, NOW()),
-(2, 'Directeur', 'Pédagogique', 'directeur@univ.mg', 'dirpass', 'ADMIN', true, NOW());
+(1, 'Admin', 'Système', 'admin@univ.mg', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ADMIN', true, NOW()),
+(2, 'Directeur', 'Pédagogique', 'directeur@univ.mg', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ADMIN', true, NOW());
 
+-- TEMPORAIRE: Mot de passe "password" pour tous les étudiants
 INSERT INTO Etudiant (id_etudiant, nom, prenom, date_naissance, email, mot_de_passe, id_user_createur, date_inscription) VALUES
-(1, 'Rakoto', 'Jean', '2002-05-15', 'jean.rakoto@univ.mg', 'jeanpass', 1, NOW()),
-(2, 'Rasoa', 'Marie', '2003-08-20', 'marie.rasoa@univ.mg', 'mariepass', 1, NOW()),
-(3, 'Rabe', 'Paul', '2002-12-10', 'paul.rabe@univ.mg', 'paulpass', 1, NOW());
+(1, 'Rakoto', 'Jean', '2002-05-15', 'jean.rakoto@univ.mg', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, NOW()),
+(2, 'Rasoa', 'Marie', '2003-08-20', 'marie.rasoa@univ.mg', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, NOW()),
+(3, 'Rabe', 'Paul', '2002-12-10', 'paul.rabe@univ.mg', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, NOW());
 
 -- ============================================
 -- INSCRIPTIONS DES ÉTUDIANTS
